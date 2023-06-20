@@ -1,5 +1,11 @@
-let months = ['January', 'December', 'March', 'April', 'June'];
-months.splice(1,1,'February',)
-months.splice(4,1,'May')
+const book ={
+"tittle": "Green Eggs and Ham",
+"description": "a stubborn unnamed character, who refuses to try green eggs and ham.",
+"author": "Dr.Seuss",
+"pages": "36pgs",
+}
 
-console.log(months);
+console.log(book ["tittle"]);
+console.log(book['description']);
+console.log(book["author"]);
+console.log(book["pages"]);
