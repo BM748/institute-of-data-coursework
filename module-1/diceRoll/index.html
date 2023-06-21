@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dice Roller</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+        <h1>Dice Roller</h1>
+
+        <label for="diceSize">Select the number of sides:</label>
+        <select id="diceSize">
+            <option id="diceSize"></option>
+            <option value="4">4-sided</option>
+            <option value="6">6-sided</option>
+            <option value="8">8-sided</option>
+            <option value="10">10-sided</option>
+            <option value="12">12-sided</option>
+            <option value="20">20-sided</option>
+        </select>
+        <button id="rollButton">Roll Dice</button>
+        <div class="dice"></div>
+        <p id="result"></p>
+        <script>
+            function rollDice() {
+    var diceSize = parseInt(document.getElementById("diceSize").value);
+
+    var randomNumber = Math.floor(Math.random() * diceSize) + 1;
+
+    document.getElementById("result").textContent = "You have rolled: " + randomNumber;
+            }
+            document.getElementById("rollButton").addEventListener("click",rollDice)
+        </script>
+        </div>
+    </body>
+</html>
