@@ -1,0 +1,102 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<title>page title</title>
+<meta charaset="utf-8">
+<link rel="stylesheet" href="style.css">
+<style>
+     body {
+        display: flex;
+        flex-direction: column;
+        min-height: 120vh;
+        margin: 0;
+    }
+
+    section {
+        flex: 1;
+        display: flex;
+        align-items: auto;
+        justify-content: center;
+        min-height:100vh ;
+    }
+
+    article {
+        text-align: center;
+        max-width: 600px;
+    }
+
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    footer {
+        padding: 1px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<header>
+ <h1 id="header">Header</h1>
+</header>
+<section>
+    <nav>
+        <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Articles</a></li>
+        </ul>
+    </nav>
+    <article>
+        <h2> MasterClass Play Like Water</h2>
+        <p>Order our new MasterClass piano tutorial set with Mooz Softpaws.</p>
+            <video width="300px" height="500px" controls>
+                <source src="https://media.istockphoto.com/id/900714718/video/funny-cat-plays-a-keyboard-organ-or-piano.mp4?s=mp4-640x640-is&k=20&c=QdYSCiLvVadUzFEhTyvDDVC5HyyT4hrICGxnSnqwqGw=">
+            </video>
+        <a href="https://www.google.com/">
+            More information...
+        </a>
+        <section>
+            <h2>Shipping Address</h2>
+            <form>
+                <label for="address">Address:</label>
+                <input type="text" id="address" required>
+                
+                <label form="city">City:</label>
+                <input type="text" id="city" name="city" required>
+
+                <label form="state">State:</label>
+                <input type="text" id="sate" name="state" required>
+
+                <label form="zip">Zip:</label>
+                <input type="text" id="zip" name="zip" required>
+
+                <button type="button" onclick="orderNow()">Order Now</button>
+            </form>
+        </section>
+    </article>
+    <aside id="aside">
+        <h2>Related</h2>
+        <ul>
+            <li><a href="#">Article 1</a></li>
+            <li><a href="#">Article 2</a></li>
+        </ul>
+    </aside>
+    <bottom>
+        </ul>
+    </bottom>
+    </section>
+    <footer>
+        <p>@copyright 2050 by nobody. all rights reversed</p>
+    </footer>
+    </body>
+    <script>
+        document.getElementById('header').innerHTML ="Hello Javascript";
+        document.getElementById('aside').style.backgroundcolor ='green';
+
+        function orderNow() {
+            alert('Your order will be shipped soon.');
+        }
+    </script>
+    </html>
+    
