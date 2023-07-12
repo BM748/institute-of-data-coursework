@@ -1,0 +1,18 @@
+header {
+    font-size: 12px;
+    background-color: blue
+    
+}
+
+.banner {
+    background-color: blue;
+}
+
+footer {
+    background-color: blue;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
