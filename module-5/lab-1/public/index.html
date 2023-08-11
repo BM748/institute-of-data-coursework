@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="./css/style.css">
+        <title>Calculator</title>
+    </head>
+    <body>
+      
+        <div class="calculator">
+          <input type="text" id="output" disabled>
+          <button class="clear-button" onclick="clearOutput()">C</button>
+          <button class="clear-button" onclick="backspace()">⌫</button> 
+          <br>
+          <button class="number-button" onclick="appendToOutput('7')">7</button>
+          <button class="number-button" onclick="appendToOutput('8')">8</button>
+          <button class="number-button" onclick="appendToOutput('9')">9</button>
+          <button class="operator-button" onclick="appendToOutput('+')">+</button>
+          <br>
+          <button class="number-button" onclick="appendToOutput('4')">4</button>
+          <button class="number-button" onclick="appendToOutput('5')">5</button>
+          <button class="number-button" onclick="appendToOutput('6')">6</button>
+          <button class="operator-button" onclick="appendToOutput('-')">-</button>
+          <br>
+          <button class="number-button" onclick="appendToOutput('1')">1</button>
+          <button class="number-button" onclick="appendToOutput('2')">2</button>
+          <button class="number-button" onclick="appendToOutput('3')">3</button>
+          <button class="operator-button" onclick="appendToOutput('*')">*</button>
+          <br>
+          <button onclick="appendToOutput('0')">0</button>
+          <button class="equal-button" onclick="calculate()">=</button>
+          <button class="operator-button"onclick="appendToOutput('/')">/</button>
+        </div>
+ 
+        <script>
+          function appendToOutput(value) {
+            document.getElementById("output").value += value;
+          }
+      
+          function clearOutput() {
+            document.getElementById("output").value = "";
+          }
+      
+          function calculate() {
+            try {
+              const expression = document.getElementById("output").value;
+              const result = eval(expression);
+              document.getElementById("output").value = result;
+            } catch (error) {
+              document.getElementById("output").value = "Error";
+            }
+          }
+
+          function calculate() {
+        try {
+            const value = display.value 
+            console.log(value)
+
+            if(value.includes('+')){
+                const[num1, num2] = value.split('+')
+
+                console.log({num1,num2, operator:'+'})
+
+                fetch(`/calculator/add/?num1=${num1}&num2=${num2}`)
+                .then(res => res.json())
+                .then(json =>{
+                    const result = json.result;
+                    display.value = result;
+                })
+                .catch(e => console.log(e))
+
+
+            }
+
+            if(value.includes('-')){
+                const[num1, num2] = value.split('-')
+
+                console.log({num1,num2, operator:'-'})
+
+                fetch(`/calculator/subtract/?num1=${num1}&num2=${num2}`)
+                .then(res => res.json())
+                .then(json =>{
+                    const result = json.result;
+                    display.value = result;
+                })
+                .catch(e => console.log(e))
+            }
+            
+            if(value.includes('*')){
+                const[num1, num2] = value.split('*')
+
+                console.log({num1,num2, operator:'*'})
+
+                fetch(`/calculator/multiply/?num1=${num1}&num2=${num2}`)
+                .then(res => res.json())
+                .then(json =>{
+                    const result = json.result;
+                    display.value = result;
+                })
+                .catch(e => console.log(e))
+            }
+
+            if(value.includes('/')){
+                const[num1, num2] = value.split('/')
+
+                console.log({num1,num2, operator:'/'})
+
+                fetch(`/calculator/divide/?num1=${num1}&num2=${num2}`)
+                .then(res => res.json())
+                .then(json =>{
+                    const result = json.result;
+                    display.value = result;
+                })
+                .catch(e => console.log(e))
+            }
+            
+
+
+
+
+          const expression = document.getElementById("output").value;
+          const result = eval(expression);
+          document.getElementById("output").value = result;
+        } catch (error) {
+          document.getElementById("output").value = "Error";
+        }
+      }
+
+
+          function backspace() {
+      const output = document.getElementById("output");
+      const currentExpression = output.value;
+      output.value = currentExpression.slice(0, -1);
+    }
+        </script>
+      </body>
+      </html>
+
+      
