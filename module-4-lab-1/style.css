@@ -1,0 +1,39 @@
+
+.user-options{
+    position: fixed;
+    right: 10px;
+    flex-direction: row-reverse;
+}
+
+.user-row{
+    font-size: 16px;
+    display: border;
+    border-style: solid;
+    color: black;
+    height: 40px;
+}
+
+
+.custom-row-1{
+display: border;
+border-style: solid;
+color: white;
+}
+
+
+/* Add custom styles here */
+.image-container {
+    height: 200px; /* Set a fixed height for consistency */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+.image-container img {
+    width: 200;
+    height: 200;
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+}
+
+body{
+    background-color: rgb(148, 148, 148);
+}
+
