@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-
-
 router.get('/add', (req, res) => {
     const {num1,num2} = req.query;
 
@@ -16,7 +14,7 @@ router.get('/add', (req, res) => {
 
 });
 router.get('/subtract', (req, res) => {
-    const {num1,num2} = req.query;
+    const {num1,num2} = req.params;
 
     const total = parseInt(num1) - parseInt(num2);
 
@@ -28,9 +26,9 @@ router.get('/subtract', (req, res) => {
 });
 
 router.get('/multiply', (req, res) => {
-    const {num1,num2} = req.query;
+    const {num1,num2} = req.body;
 
-    const total = parseInt(num1) * parseInt(num3);
+    const total = parseInt(num1) * parseInt(num2);
 
     res.status(200)
     res.json({result:total})
@@ -41,7 +39,7 @@ router.get('/multiply', (req, res) => {
 
 
 router.get('/divide', (req, res) => {
-    const {num1,num2} = req.query;
+    const {num1,num2} = req.body;
 
     const total = parseInt(num1) / parseInt(num2);
 

@@ -10,6 +10,8 @@ app.use('/',express.static(public_dir))
 
 app.use('/mytest', testRoute);
 app.use('/calculator', calculatorRoute);
+app.use(express.json());
+
 
 
 app.listen(port, () => {

@@ -1,22 +1,23 @@
-function fetchData(operator, num1, num2){
-  const operatorMap={
-    '+':'add',
-  '-': 'subtract',
-  '*': 'multiply',
-  '/': 'divide',
-  }
-  const operation = operatorMap[operator]
-    const url =`/calculator/${operation}/?num1=${num1}&num2=${num2}`;
+function fetchData(operator, num1, num2) {
+  const operatorMap = {
+    '+': 'add',
+    '-': 'subtract',
+    '*': 'multiply',
+    '/': 'divide',
+  };
   
-    return fetch(url)
+  const operation = operatorMap[operator];
+  const url = `/calculator/${operation}?num1=${num1}&num2=${num2}`;
+
+  return fetch(url)
     .then(res => res.json())
     .then(json => json.result)
-    .catch(error =>{
-        console.log(error);
-        throw error;
+    .catch(error => {
+      console.log(error);
+      throw error;
     });
-  }
-  
+}
+
   function appendToOutput(value) {
   document.getElementById("output").value += value;
   }
