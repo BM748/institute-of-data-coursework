@@ -8,14 +8,14 @@ const  getReview = (res) => {
     Models.Review.findAll({}).then(function (data) {
         res.send({result:200, data:data})
     }).catch (err =>{
-        throw err
+        console.log(err);
     })
 }
 const createReview = (data, res) => {
     Models.Comment.create(data).then(function (data) {
         res.send({ result: 200 , data: data})
     }).catch(err =>{
-        throw err
+        console.log(err);
     })
   
 }
