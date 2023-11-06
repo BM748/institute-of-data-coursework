@@ -4,11 +4,11 @@ const Controllers = require("../controllers");
 
 
 router.get('/', (req,res) => {
-    Controllers.reviewController.getReview(res);
+    Controllers.imageController.getImage(res);
 })
 
 router.post('/create', (req, res) => {
-    Controllers.reviewController.createReview(req.body, res)
+    Controllers.imageController.createImage(req.body, res)
 })
 
 

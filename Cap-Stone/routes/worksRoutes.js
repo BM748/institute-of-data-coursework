@@ -3,12 +3,12 @@ const router = express.Router();
 const Controllers = require("../controllers");
 
 
-router.get('/', (req,res) => {
-    Controllers.reviewController.getReview(res);
+router.get('/', (req, res) => {
+    Controllers.worksController.getWorks(res);
 })
 
 router.post('/create', (req, res) => {
-    Controllers.reviewController.createReview(req.body, res)
+    Controllers.worksController.createWorks(req.body, res)
 })
 
 
