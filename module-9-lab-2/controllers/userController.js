@@ -20,10 +20,11 @@ const createUsers = (data, res) => {
 }
 
 const updateUser = (req, res) => {
-    Models.User.update(req.body, {where:{id:
-    req.params.id} }).then(function (data) {
+    Models.User.update(req.body, {where:{id: req.params.id} })
+    .then(function (data) {
         res.send({result:200, data: data})
-    }).catch(err => {
+    })
+    .catch(err => {
         throw err
     })
    
@@ -34,10 +35,13 @@ const deleteUser = (req, res) =>{
     }).then(function(data) {
         res.send({ result: 200, data: data})
     }).catch(err => {
-        throw err
+         console.log(err);
     })
     }
 
 module.exports = {
-    getUsers, createUsers
+    getUsers, 
+    createUsers,
+    updateUser,
+    deleteUser
 }
