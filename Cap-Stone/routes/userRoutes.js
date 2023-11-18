@@ -4,11 +4,11 @@ const Controllers = require("../controllers");
 
 
 router.get('/', (req, res) => {
-    Controllers.artistController.getUsers(res);
+    Controllers.userController.getUsers(res);
 })
 
 router.post('/create', (req, res) => {
-    Controllers.artistController.createUsers(req.body, res)
+    Controllers.userController.createUsers(req.body, res)
 })
 
 
