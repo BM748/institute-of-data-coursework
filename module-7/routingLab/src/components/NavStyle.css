@@ -1,0 +1,13 @@
+.menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Push the menu to the right */
+  }
+  
+  .menu-item {
+    margin-left: 50px; /* Add some space between menu items */
+    text-decoration: none;
+    color: white; /* Adjust color as needed */
+  }
